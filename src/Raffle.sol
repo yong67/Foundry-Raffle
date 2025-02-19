@@ -29,7 +29,7 @@ import {AutomationCompatibleInterface} from "@chainlink/contracts/src/v0.8/inter
 
 /**
  * @title A sample Raffle Contract
- * @author Patrick Collins
+ * @author Fu Zhaoyang
  * @notice This contract is for creating a sample raffle contract
  * @dev This implements the Chainlink VRF Version 2
  */
@@ -162,7 +162,11 @@ contract Raffle is VRFConsumerBaseV2Plus, AutomationCompatibleInterface {
      * @dev This is the function that Chainlink VRF node
      * calls to send the money to the random winner.
      */
-    function fulfillRandomWords(uint256, /* requestId */ uint256[] calldata randomWords) internal override {
+    function fulfillRandomWords(
+        uint256,
+        /* requestId */
+        uint256[] calldata randomWords
+    ) internal override {
         // s_players size 10
         // randomNumber 202
         // 202 % 10 ? what's doesn't divide evenly into 202?

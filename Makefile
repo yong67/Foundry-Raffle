@@ -12,6 +12,10 @@ help:
 
 all: clean remove install update build
 
+
+deploy-sepolia:
+	@forge script script/DeployRaffle.s.sol:DeployRaffle --rpc-url $(SEPOLIA_RPC_URL) --account myaccount --broadcast --verify --etherscan-api-key $(ETHERSCAN_API_KEY) -vvv
+
 # Clean the repo
 clean  :; forge clean
 
